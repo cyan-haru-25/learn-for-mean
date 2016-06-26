@@ -1,1 +1,1 @@
-cmd /k compass watch Y:\git\learn_for_mean\public
+cmd /k compass watch C:\learn-for-mean-master\public

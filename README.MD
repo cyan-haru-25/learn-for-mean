@@ -1,6 +1,6 @@
-# 概要
+# 【概要】
 
-本アプリは以下の技術をざっくり学ぶ為に作りました。
+本アプリは以下の技術を、アプリの動作を見ながら学ぶ為に作りました。
 
 * Node.js
 * Express
@@ -9,11 +9,14 @@
 * TypeScript
 
 
-予約管理できるシステムを意識した作りになっていて
+予約管理できるシステムを意識した作りになっていて  
 下の流れで動き見ていけるかと思います。
 
 　①メンバー登録  
 　②予約登録
+
+動作環境は驚くほど簡単にできます。  
+さらに、開発環境の構築にもそこまで時間を要しません。
 
 <br>
 # 対象
@@ -35,27 +38,14 @@ nodeのバージョンを管理できるNodistのインストール手順にな�
 [https://github.com/marcelklehr/nodist/releases/](https://github.com/marcelklehr/nodist/releases/)
 
 <br>
-# 導入手順
-・無線はDropBox等は切っておく
+# 【アプリ動作環境設定手順】
 
-[nodist]
-ここの手順でNodistとnodeをインストール
-http://qiita.com/yokoh9/items/20d6bdc6030a3a861189
-
-※nodist(ここのalphaではないlatest(0.7.2))を使う
-　https://github.com/marcelklehr/nodist/releases/
-
-
-あとはここを参考にワークショップをインストール
-https://github.com/nodeschool/osaka/blob/master/setup/windows.md
-
-*[手順]*  
 ※全てWindowsを前提としています。
 
-①ダウンロードしたファイルの中にある`learn-for-mean-master`を任意のフォルダに置いて下さい。  
+### ①ダウンロードしたファイルの中にある`learn-for-mean-master`を任意のフォルダに置いて下さい。  
 　※ここでは`C:\`直下に置く前提で説明します。
 
-②ダウンロードしたフォルダに移動して
+### ②ダウンロードしたフォルダに移動して
 nodeのパッケージをインストールします。
 
 ```
@@ -63,18 +53,20 @@ cd C:\learn-for-mean-master
 npm install
 ```
 
-③アプリを起動します。
+### ③アプリを起動します。
 
 ```
 npm start
 ```
+※フォルダさえ合っていれば`start_node.cmd`で実行できるはずです。
 
-④作ったサイトにアクセスします。  
+### ④作ったサイトにアクセスします。  
 [http://localhost/](http://localhost/)
 
 
-これだけで、先に書いた技術を使っての、以下の機能が使える状態になりました。
+これだけで、動作確認できる状態になりました。
 
+アプリは以下のような機能も持ちますが、これだけで、これらも全て設定完了です。
 * Webサーバ機能
 * DB接続
 * メール送信
@@ -82,11 +74,11 @@ npm start
 あとは、それぞれの機能がどう実装されているか、修正したりしながら学習していきましょう。
 
 <br>
-# 開発環境
+# 【開発環境設定手順】
 開発するにあたっては、`typescript`と`scss`をコンパイル出来る開発環境を前提としています。
 
 <br>
-# 【typescriptのコンパイル】
+## 【typescriptのコンパイル】
 
 参考にVSCode(Visual Studio Code)を使う場合ですが、以下のサイトの手順でtypescriptをコンパイルする環境が作れます。  
 http://qiita.com/tkyaji/items/33b3e0aef207c4e29b94  
@@ -108,17 +100,17 @@ npm install -g typescript
 ```
 Ctrl+Shift+B
 ```
-以上で、tsファイルを修正すれば、jsファイルにコンパイルされます。  
+以上で、tsファイルを修正すれば、jsファイルにコンパイルできる状態になりました。  
 
-※設定ファイル
+※使っている設定ファイル
 * `tasks.json` -> タスクの実行設定
 * `tsconfig.json` -> コンパイル設定
 
 
 <br>
-# 【SASSのコンパイル】
-以下の設定で、プロジェクトファイル中にcompass用の設定ファイル`config.rb`をそのまま使えるはずです。  
-Bootstrapをcompassを使って導入しているので、多分この設定じゃないと厳しい。
+## 【SASSのコンパイル】
+Bootstrapをcompassを使って導入しているので、以下の手順で設定しましょう。  
+※上級者の方は、別の方法でも設定できるかと思います。
 
 <br>
 【手順】

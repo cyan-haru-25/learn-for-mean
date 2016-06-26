@@ -1,2 +1,2 @@
-cd Y:\git\learn_for_mean
+cd C:\learn-for-mean-master
 cmd /k npm start
