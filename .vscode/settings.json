@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite the default settings
+{
+      "jshint.enable": true
+    ,"files.exclude": {
+        //"**/*.js": true,
+        "**/*.css": true,
+        "**/*.map": true,
+        "**/*.ai": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true,
+        "**/DefinitelyTyped*":true
+    }
+    //,"editor.fontSize": 30
+}

@@ -1,0 +1,13 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Error <%= @error.status %></title>
+</head>
+<body>
+  <span>
+  Error Status: <%= @error.status %>
+  <hr>
+  <pre><%= @error.stack %></pre>
+  </span>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "compass";
+@import "lib/media_queries";
+@import "bootstrap/bootstrap-variables";
+
+textarea#other{
+    width:70%;
+    height:100px;
+}
+
+input#member_regist_submit{
+    margin-top: 30px;
+}

@@ -1,0 +1,72 @@
+
+        <form (submit)="form_validate()" >
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>メールアドレス (必須)</label>
+                    <input id="email" [(ng-model)]="input.email" type="email" required/>
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label>メールアドレスを双方向バインディングで表示</label>
+                    <div>{{input.email}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>パスワード (必須)</label>
+                    <input id="password" [(ng-model)]="input.password" type="password" pattern=".{6,}" required/>
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label>パスワード確認 (必須)</label>
+                    <input id="password_check" [(ng-model)]="input.password_check" type="password" required/>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-11">
+                    <label>お名前</label>
+                    <input id="name" [(ng-model)]="input.name" type="text"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>お電話番号</label>
+                    <input id="tel" [(ng-model)]="input.tel" type="tel"/>
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label >生年月日</label>
+                    <input id="birthday" [(ng-model)]="input.birthday" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-11">
+                    <label>その他ご質問等</label>
+                    <textarea id="other" [(ng-model)]="input.other" ></textarea>
+                </div>
+            </div>
+			<!--<button type="button" class="btn btn-primary">送信</button>-->
+            <div class="row">
+                <div class="col-xs-8 col-sm-8"></div>
+    			<input id="member_regist_submit" type="submit" class="btn btn-primary"></button>
+            </div>
+        </form>
+			<div class="markup_integrate">
+### 概要
+angular2を使って入力値の受け渡しやイベントの発火をしています。
+入力した内容でメンバー登録されて、登録した内容は予約画面で一部表示できます。
+
+個人で使っているサーバに`MongoDB`を入れていて、そこに登録されるようになっています。
+DBにはその内繋がらなくなると思うので、本格的に学びたい方はローカル環境にmongoDBをインストールしましょう。
+
+さらに、登録が終わると登録結果がメールで送られます。
+メール送信には`nodemailer`を使っていて、アドレスは`yahooメール`を使っています。
+この組み合わせでお手軽にメール送信を実現できます。
+			</div>

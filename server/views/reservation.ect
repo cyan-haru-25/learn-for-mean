@@ -1,0 +1,35 @@
+<% extend 'elements/layout' %>
+
+<!-- ヘッダー個別情報 -->
+<% block 'header-info' : %>
+    <link rel="stylesheet" type="text/css" href="/css/reservation.css">
+	<link href="/_commons/css/bootstrap/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+	<script src="/_commons/js/bootstrap/bootstrap-datetimepicker.js"></script>
+	<script src="/_commons/js/bootstrap/locales/bootstrap-datetimepicker.ja.js"></script>
+	<!--<script src="/js/reservation_model.js"></script>-->
+    <script>
+		System.import('/js/reservation_front.js');  // packagesの指定により拡張子不要
+    </script>
+<% end %>
+
+<div id="overall_contents">
+	<article id="main">
+		<section id="reservation">
+			<h2>RESERVATION<span class="muted_font">(予約)</span></h2>
+			<div class="markup_integrate">
+以下のフォームに予約情報を入力して下さい。
+予約可否は弊社から折り返し連絡させて頂きます。
+			</div>
+		<h2>FORM<span class="muted_font">(お申込みフォーム)</span></h2>
+		<!-- ag2tmp-infoに置き換わる -->
+		<my-app>Loading...</my-app>
+		</section>
+	</article><!-- /#main -->
+</div><!-- /#contents -->
+
+
+
+<!-- ▼Angular2用テンプレート▼ -->
+<% block 'ag2tmp-info' : %>
+<% end %>
+<!-- ▲Angular2用テンプレート▲ -->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, dialog, figure, footer, header,
+  hgroup, menu, nav, section { display: block; }
+</style>
+
+<meta name="keywords" content="Javascript,Documentation,Framework,Markdown,Textile,Wiki,jQuery,Syntax,Dropbox" />
+<meta name="description" content="Javascript documentation framework.Markdown, Textile, Wiki format support." />
+<title>Invisible.js</title>
+
+<link href="./integrater.css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="../_commons/js/markup_integrate.js"></script>
+<!--<script type="text/javascript" src="./marked.js"></script>
+<script type="text/javascript" src="./textiled.js"></script>-->
+<script type="text/javascript" src="./integrater.js"></script>
+
+</head>
+<body>
+
+    <div id="markup_input_warp">
+    <label for="markup_preview">Input</label><br>
+    <textarea id="markup_input"></textarea></div>
+
+    <!--Preview-->
+    <div id="markup_preview_warp">
+    <label for="markup_preview">Preview</label><br>
+    <div id="markup_preview"></div></div>
+
+    <!--Preview todo:デバッグ用コード-->
+    <div id="markup_preview_first_warp">
+        <label for="markup_preview_first">FirstHTML</label><br>
+        <textarea id="markup_preview_first"></textarea>
+    </div>
+
+    <!--Preview todo:デバッグ用コード-->
+    <div id="markup_preview_last_warp">
+        <label for="markup_preview_last">LastHTML</label><br>
+        <textarea id="markup_preview_last"></textarea>
+    </div>
+
+</body>
+</html>

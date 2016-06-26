@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%- @title %></title>
+    <meta name="viewport" content="width=device-width">
+    <script src="../lib/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../lib/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script>
+      System.config({
+        //transpiler: 'typescript', // タイプスクリプトを有効にする
+        //typescriptOptions: { emitDecoratorMetadata: true },
+        packages: {'js': {defaultExtension: 'js'}} // javascriptフォルダ内のimportの参照は.jsファイルを参照
+      });
+    </script>
+    <!--共通のcss,js-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/styles.css"> <!--bootstrap-->
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <script type="text/javascript" src="/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.smoothscroll.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.scrollshow.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.rollover.js"></script>
+    <script type="text/javascript" src="/_commons/js/markup_integrate.js"></script>
+    <script>
+      $(function($){
+        $('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 10});
+        $('.totop').scrollshow({position : 500});
+      });
+    </script>
+    
+    <% content 'header-info' %>
+  </head>
+  <body>
+  
+<!--スマートフォン用メニュー-->
+<div id="spMenu"><span id="navBtn"><span id="navBtnIcon"></span></span></div>
+<!--PC用メニュー-->
+<nav>
+  <div class="header_logo"><a href="/" class="header_logo_img"></a></div>
+	<div class="inner">
+		<ul class="gnav">
+			<li><a href="/">始めに</a></li>
+			<li><a href="/regist">メンバー登録</a></li>
+			<li><a href="/reservation">予約</a></li>
+		</ul>
+	</div><!-- /.inner -->
+</nav>
+
+    <% content %>
+
+  <!-- Angular2用テンプレート -->
+  <script>
+    var _template = (function() {/*
+      <% content 'ag2tmp-info' %>
+  */}).toString().match(/\/\*([^]*)\*\//)[1];
+  </script>
+  
+  <!-- フッター -->
+  <% include 'elements/footer' %>
+  </body>
+</html>

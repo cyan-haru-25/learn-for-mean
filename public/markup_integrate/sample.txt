@@ -1,0 +1,101 @@
+h1. h1Textile *strong* **bold** Sample
+
+h2. h2 _em_ __italic__
+
+h3. h3 ^sub^ ~sup~
+
+h4.  h4 -取り消し- +アンダースコア+
+
+h5. h5 text
+
+h6.  h6 _notextile_
+
+notextile. 
+h1. h1Textile *strong* **bold** Sample
+
+
+* abc
+** def
+
+# List1
+# List2
+## List2-1
+
+bc. block quart      var a = 123
+
+bq. backquart 
+
+pre. pre space            aaa
+
+###. コメントのはずが効かない
+
+<b style="background:blue">HTMLの確認<b>
+
+
+<b style="color:red">_table_</b>
+
+|Header xxx|Header yyy|
+|:--:|:--|
+|body1|body2|
+
+
+参照[1]
+
+fn1. "被参照":http://www.brainyquote.com/quotes/quotes/a/alberteins148867.html
+
+image: !http://taghtml.com/wp-content/plugins/wp-social-bookmarking-light/images/facebook.png!
+
+
+"CyberBird-blob":https://cyberbird-blob.cloudapp.net/portal/login
+
+??斜体??
+
+インライン @インライン@
+
+
+p=. Centered paragraph.
+
+p>. Right aligned paragraph.
+
+p(. Left indent 1em.
+
+p((. Left indent 2em.
+
+p(((. Left indent 3em.
+
+p(>. right indent 1em
+
+p))>. right indent 2em
+
+p)))>. right indent 3em
+
+
+span + style check %{color:blue}target% 
+
+p{color:blue;letter-spacing:.5em}. This is blue spaced text.
+
+// クラスが設定される
+
+p(btn). classcheck
+
+// IDが設定される
+
+_(　#special-phrase)emphasized phrase_ has an id.
+
+p[ja]. Partir, c'est toujours mourir un peu.
+
+-Straight quotation marks := "example" (converted into curly quotation marks)
+
+TITLESETTED(タイトルです。全角英字３文字以上らしい。)　←マウスオーバーして下さい
+
+全角英字３文字以上でclass="caps" が設定される。用途は不明
+NASDAQ, NYSE, and AMEX are US stock exchanges.
+
+Registered(R)
+
+Scientists say the moon is slowly shrinking[#moon].
+aaaaa[#abc]. 
+
+notelist!.
+
+note#moon. Over the past billion years, about a quarter of the moon's 4.5 billion-year lifespan, it has shrunk about 200 meters (700 feet) in diameter.

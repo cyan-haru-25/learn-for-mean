@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import "compass";
+@import "lib/media_queries";
+@import "bootstrap/bootstrap-variables";
+
+div#overall_contents{
+    >article#main{
+        section#flow{
+            pre{
+                margin-left: 40px;
+            }
+        }
+        section#Weekday{
+            div.week_day_img_div{
+                text-align: center;
+                img.week_day_img{
+                    width: 800px;
+
+                }
+            }
+        }
+        section#cancel{
+            table{
+                width: 300px;
+            }
+        }
+    }
+}

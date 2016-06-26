@@ -1,0 +1,13 @@
+<% linkHelper = (link) -> %>
+  <li><a href="<%- link.url %>"><%- link.name %></a></li>
+<% end %>
+
+<% if @links?.length : %>
+  <ul>
+    <% for link in @links : %>
+      <%- linkHelper link %>
+    <% end %>
+  </ul>
+<% else : %>
+  <p>List is empty</p>
+<% end %>

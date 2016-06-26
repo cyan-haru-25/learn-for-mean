@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "delay" : 1,
+  "watch": ["routes","app.js"]
+}

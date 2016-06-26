@@ -1,0 +1,648 @@
+@charset "UTF-8";
+/*@mixin debug-support-matrix($experimental: true, $ie: true) {
+  @debug  $moz-$experimental-support-for-mozilla
+          $webkit-$experimental-support-for-webkit
+          $opera-$experimental-support-for-opera
+          $microsoft-$experimental-support-for-microsoft
+          $khtml-$experimental-support-for-khtml;
+  @debug  $ie6-$legacy-support-for-ie6
+          $ie7-$legacy-support-for-ie7
+          $ie8-$legacy-support-for-ie8;
+}*/
+/* ************************************
+ *
+ * SCSS Media Queries Mixins
+ * 
+ * Aauthor   : Ryuichi Nonaka
+ * Version   : 0.4.0
+ * Copyright : 2012 Ryuichi Nonaka
+ * Date      : 2012/11/16
+ *
+ * Released under the MIT license
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Device Width 
+ * Initialize variables
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Browser Prefix 
+ * Initialize variables
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Return ratio
+ * Initialize variables
+ * @param $prefix prefix type
+ * @param $ratio device ratio
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Mobile Device mixin
+ * @param $orientation Direction of a device
+ * @param $version [old|modern|future|any] The version of a device
+ * @param $add_orientation boolean [true|false] add orientation attribute
+ *
+ * old    : iPhone 3G or 3GS.
+ * modern : iPhone 4 or 4S.
+ * future : iPhone 5.
+ * any    : All version.
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Tablet Device mixin
+ * @param $orientation Direction of a device
+ * @param $version [old|modern|any] The version of a device
+ * @param $add_orientation boolean [true|false] add orientation attribute
+ *
+ * old    : iPad 1 or 2 or mini.
+ * modern : new iPad (3).
+ * any    : All version.
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Desctop Device mixin
+ * @param $size Direction of a device
+ * @param $version [modern|future|any] The version of a device
+ *
+ * Version modern ---------------------
+ * narrow  : max width 1024.
+ * modern  : max width 1280.
+ * wide    : max width 1600.
+ * hd      : max width 1920.
+ * over    : width 1920 over.
+ * ratio   : 1.0
+ *
+ * Version future ---------------------
+ * modern : max width 1280.
+ * wide   : max width 1440.
+ * ratio  : 2.0
+ *
+ *********************************** */
+/* ************************************
+ *
+ * Custom Device mixin
+ * @param $min_width number(px) Minimum device size
+ * @param $max_width number(px) Maximum device size
+ * @param $pixel_ratio number Device px ratio
+ * @param $add_orientation boolean [true|false] add orientation attribute
+ *
+ *********************************** */
+/*================================================
+*  一般・共通設定
+================================================*/
+/* line 21, common.scss */
+.emphasis {
+  font-weight: bold;
+  color: red;
+}
+
+/* line 27, common.scss */
+.muted_font {
+  font-size: 0.7em;
+  color: #555555;
+}
+
+/* line 32, common.scss */
+div#overall_contents {
+  overflow: hidden;
+  width: 980px;
+  margin: 20px auto;
+  background: #fff;
+}
+@media screen and (max-width: 979px) {
+  /* line 32, common.scss */
+  div#overall_contents {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 32, common.scss */
+  div#overall_contents {
+    margin-left: 0px;
+  }
+}
+
+/* line 45, common.scss */
+article#main, aside {
+  box-sizing: border-box;
+  overflow: hidden;
+  float: left;
+  margin-bottom: -32768px;
+  padding-bottom: 32768px;
+}
+
+/* line 53, common.scss */
+article#main {
+  width: 100%;
+}
+
+/* line 62, common.scss */
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* line 69, common.scss */
+h2 {
+  border-bottom: 3px #95aae7 solid;
+  margin: 50px 5% 30px auto;
+}
+
+/* line 76, common.scss */
+div.small_bg_img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 83, common.scss */
+table.table_base th {
+  background-color: #d9edf7;
+}
+/* line 88, common.scss */
+table.table_base tbody td:first-child {
+  background-color: #eafff7;
+  font-weight: bold;
+}
+
+/* line 97, common.scss */
+.form-group .form-control {
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 103, common.scss */
+  *.col-xs-0 {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 978px) {
+  /* line 108, common.scss */
+  *.col-ms-0 {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 979px) and (max-width: 1199px) {
+  /* line 113, common.scss */
+  *.col-md-0 {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 118, common.scss */
+  *.col-lg-0 {
+    display: none !important;
+  }
+}
+/*================================================
+*  ヘッダー
+================================================*/
+/*================================================
+*  グローバルナビゲーション
+================================================*/
+/* line 129, common.scss */
+nav {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 1px 2px #d0d8dc;
+  display: flex;
+  ⁄zoom: 1;
+}
+/* line 137, common.scss */
+nav:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 142, common.scss */
+nav > div {
+  height: 40px;
+  float: left;
+}
+/* line 146, common.scss */
+nav > div.header_logo {
+  margin-left: calc((100% - 980px)/2 + 10px);
+  width: 392px;
+}
+/* line 150, common.scss */
+nav > div.header_logo > a.header_logo_img {
+  background: url("../img/header-logo.png") no-repeat;
+  width: 195px;
+  height: 100%;
+  background-size: contain;
+  margin-left: 10px;
+  padding: 0;
+  display: block;
+}
+/* line 160, common.scss */
+nav > div.inner {
+  position: relative;
+  width: 588px;
+}
+/* line 163, common.scss */
+nav > div.inner > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+}
+/* line 168, common.scss */
+nav > div.inner > ul > li {
+  flex-grow: 1;
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+/* line 177, common.scss */
+nav > div.inner > ul > li:hover {
+  background: #b7b7ff;
+}
+/* line 181, common.scss */
+nav > div.inner > ul > li:hover:before, nav > div.inner > ul > li:hover + li:before {
+  display: none;
+}
+/* line 185, common.scss */
+nav > div.inner > ul > li:last-child:hover:after {
+  display: none;
+}
+/* line 188, common.scss */
+nav > div.inner > ul > li:last-child li {
+  left: -50%;
+}
+/* line 191, common.scss */
+nav > div.inner > ul > li a {
+  margin: 0 auto;
+  display: table;
+  padding-top: 8px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  height: 100%;
+  width: 100%;
+}
+/* line 203, common.scss */
+nav > div.inner > ul > li li:first-child {
+  width: 150%;
+}
+
+/*================================================
+*  サブコンテンツ
+================================================*/
+/* line 216, common.scss */
+.bnr {
+  overflow: hidden;
+}
+/* line 218, common.scss */
+.bnr ul {
+  overflow: hidden;
+}
+/* line 221, common.scss */
+.bnr li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 225, common.scss */
+.bnr li a:hover {
+  filter: alpha(opacity=80);
+  -ms-filter: "alpha( opacity=80 )";
+}
+/* line 230, common.scss */
+.bnr img {
+  width: 100%;
+}
+
+/*================================================
+*  フッター
+================================================*/
+/* line 239, common.scss */
+footer {
+  clear: both;
+}
+
+/* line 243, common.scss */
+.footmenu {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  background: #efede9;
+}
+/* line 248, common.scss */
+.footmenu ul {
+  position: relative;
+  float: left;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+}
+/* line 255, common.scss */
+.footmenu li {
+  position: relative;
+  left: -50%;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0 15px;
+  font-size: 12px;
+  text-align: center;
+}
+/* line 265, common.scss */
+.footmenu a {
+  color: #333;
+  text-decoration: none;
+}
+/* line 268, common.scss */
+.footmenu a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* line 275, common.scss */
+.copyright {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 11px;
+  color: #efede9;
+  background: #2e2e2e;
+  justify-content: center;
+  position: relative;
+}
+/* line 284, common.scss */
+.copyright div.mean_logo_div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 80%;
+  right: 0px;
+  bottom: 0px;
+}
+/* line 291, common.scss */
+.copyright div.mean_logo_div .mean_logo {
+  width: 100px;
+  height: 60%;
+  background: url(../img/mean_logo_w.png) 0 0px no-repeat;
+  background-size: contain;
+  margin-left: 5px;
+}
+
+/*================================================
+*  ページトップへの戻り
+================================================*/
+/* line 305, common.scss */
+.totop {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+}
+/* line 310, common.scss */
+.totop a {
+  display: block;
+  text-decoration: none;
+}
+/* line 314, common.scss */
+.totop img {
+  background: #0006a5;
+}
+/* line 316, common.scss */
+.totop img:hover {
+  background: #2228c7;
+}
+
+/*================================================
+*  クラス
+================================================*/
+/*================================================
+*  タブレット向けデザイン
+================================================*/
+/* スクロールバーを考慮して20px大きいサイズで切り替え */
+@media screen and (max-width: 979px) {
+  /* line 334, common.scss */
+  nav > div.header_logo {
+    margin-left: 0px;
+  }
+  /* line 337, common.scss */
+  nav > div.inner {
+    width: 60%;
+  }
+
+  /* line 341, common.scss */
+  div#overall_contents {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* line 346, common.scss */
+  footer {
+    width: 100%;
+  }
+}
+/*================================================
+*  スマートフォン向けデザイン
+================================================*/
+@media screen and (max-width: 480px) {
+  /* line 355, common.scss */
+  .lock {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  /* line 359, common.scss */
+  article#main, aside {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 364, common.scss */
+  nav > div {
+    height: 0px;
+  }
+  /* line 367, common.scss */
+  nav > div.inner > ul {
+    z-index: 2;
+    display: initial;
+    overflow: auto;
+    position: fixed;
+    top: 53px;
+    right: 0;
+    width: 100%;
+    height: 88%;
+    height: calc(100% - 53px);
+  }
+  /* line 378, common.scss */
+  nav > div.inner > ul li {
+    width: 100% !important;
+    float: none;
+    text-align: left;
+    border-bottom: 1px solid #9595ff;
+    background: #c8c8ff;
+  }
+  /* line 384, common.scss */
+  nav > div.inner > ul li:first-child {
+    border-top: 0;
+  }
+  /* line 387, common.scss */
+  nav > div.inner > ul li:last-child {
+    border-bottom: 0;
+  }
+  /* line 390, common.scss */
+  nav > div.inner > ul li > a {
+    padding: 10px 30px;
+  }
+
+  /* line 397, common.scss */
+  .active > a:before {
+    margin-top: 0;
+  }
+  /* line 400, common.scss */
+  .active > a:after {
+    margin-top: 5px;
+  }
+
+  /* line 404, common.scss */
+  div#spMenu {
+    z-index: 2;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  /* line 409, common.scss */
+  div#spMenu:hover {
+    cursor: pointer;
+  }
+  /* line 412, common.scss */
+  div#spMenu > span#navBtn {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 5%;
+    background: #0006a5;
+  }
+  /* line 419, common.scss */
+  div#spMenu > span#navBtn:hover {
+    background: #2228c7;
+  }
+  /* line 422, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    margin: -1px 0 0 -7px;
+    background: #f1f1f1;
+    transition: .2s;
+  }
+  /* line 432, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon:before, div#spMenu > span#navBtn > span#navBtnIcon:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 2px;
+    background: #f1f1f1;
+    transition: 0.3s;
+  }
+  /* line 443, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon:before {
+    margin-top: -6px;
+  }
+  /* line 446, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon:after {
+    margin-top: 4px;
+  }
+  /* line 449, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon.nav_close {
+    background: transparent;
+  }
+  /* line 451, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon.nav_close:before, div#spMenu > span#navBtn > span#navBtnIcon.nav_close:after {
+    margin-top: 0;
+  }
+  /* line 455, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon.nav_close:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  /* line 459, common.scss */
+  div#spMenu > span#navBtn > span#navBtnIcon.nav_close:after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+}
+/* line 470, common.scss */
+div.markup_integrate p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  /* line 470, common.scss */
+  div.markup_integrate p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 478, common.scss */
+  div.markup_integrate ul {
+    -webkit-padding-start: 20px;
+  }
+}
+/* line 483, common.scss */
+div.markup_integrate blockquote {
+  font-size: 14px;
+}
+/* line 485, common.scss */
+div.markup_integrate blockquote p {
+  padding-left: 0px;
+}
+/* line 489, common.scss */
+div.markup_integrate pre {
+  margin-left: 60px;
+  display: inline-block;
+  white-space: pre-wrap;
+}
+@media screen and (max-width: 768px) {
+  /* line 489, common.scss */
+  div.markup_integrate pre {
+    margin-left: auto !important;
+  }
+}
+/* line 497, common.scss */
+div.markup_integrate div.table_wraper {
+  overflow: auto;
+  margin: auto 30px;
+}
+@media screen and (max-width: 768px) {
+  /* line 497, common.scss */
+  div.markup_integrate div.table_wraper {
+    margin: auto auto !important;
+  }
+}
+/* line 504, common.scss */
+div.markup_integrate div.table_wraper table {
+  max-width: 100% !important;
+}
+
+/*# sourceMappingURL=common.css.map */

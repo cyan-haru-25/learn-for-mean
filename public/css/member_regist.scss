@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "compass";
+@import "lib/media_queries";
+@import "bootstrap/bootstrap-variables";
+
+#from_datetime,#to_datetime{
+    background-color: white;
+}
+
+textarea#other{
+    width:70%;
+    height:100px;
+}
+
+input#reservation_submit{
+    margin-top: 30px;
+}

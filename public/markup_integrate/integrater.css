@@ -1,0 +1,21 @@
+#markup_input_warp{
+    float:left;
+}
+
+#markup_input{
+    width:500px;
+    height:300px;
+}
+#markup_preview_last,#markup_preview_first,#markup_preview{
+    width:500px;
+    height:320px;
+}
+
+div[id^=markup_preview_]{
+    float:left;
+}
+#markup_preview{
+    border:1px solid gray;
+    background-color: #bbb;
+    overflow: auto;
+}

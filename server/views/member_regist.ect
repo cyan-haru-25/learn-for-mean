@@ -1,0 +1,31 @@
+<% extend 'elements/layout' %>
+
+<!-- ヘッダー個別情報 -->
+<% block 'header-info' : %>
+    <link rel="stylesheet" type="text/css" href="/css/member_regist.css">
+	<link href="/_commons/css/bootstrap/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+	<script src="/_commons/js/bootstrap/bootstrap-datetimepicker.js"></script>
+	<script src="/_commons/js/bootstrap/locales/bootstrap-datetimepicker.ja.js"></script>
+    <script>
+		System.import('/js/member_regist_front.js');  // packagesの指定により拡張子不要
+    </script>
+<% end %>
+
+<div id="overall_contents">
+	<article id="main">
+
+		<section id="reservation">
+			<h2>ユーザ登録フォーム<span class="muted_font">(angular2)</span></h2>
+			<!-- ag2tmp-infoに置き換わる -->
+			<my-app>Loading...</my-app>
+
+		</section>
+	</article><!-- /#main -->
+</div><!-- /#contents -->
+
+
+
+<!-- ▼Angular2用テンプレート▼ -->
+<% block 'ag2tmp-info' : %>
+<% end %>
+<!-- ▲Angular2用テンプレート▲ -->

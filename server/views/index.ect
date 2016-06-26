@@ -1,0 +1,72 @@
+<% extend 'elements/layout' %>
+
+<!-- ヘッダー個別情報 -->
+<% block 'header-info' : %>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script>
+		System.import('/js/index_front.js');  // packagesの指定により拡張子不要
+    </script>
+<% end %>
+
+<div id="overall_contents">
+	<article id="main">
+		<section id="express etc">
+				<h2>始めに<span class='muted_font'>(概要)</span></h2>
+			<div class="markup_integrate">
+本アプリは以下の技術をざっくり学ぶ為に作りました。
+
+* Node.js
+* Express
+* Angular2
+* MongoDB
+* TypeScript
+
+<br>
+
+予約管理できるシステムを意識した作りになっていて
+下の流れで動き見ていけるかと思います。
+#### 　*①メンバー登録*
+#### 　*②予約登録*
+
+			</div>
+			<div id='<%- @id %>'>
+				<h2><%- @title %><span class='muted_font'>(<%- @subtitle %>)</span></h2>
+				リスト表示をしています。
+				<% include 'elements/list' %>
+
+				パラメータでわたされたfunctionで小文字を大文字にしています。<br>
+				<%- @upperHelper @subtitle %><br><br>
+			</div>
+			<hr>
+			<div>
+				タグのエスケープあり with <i>&lt%=  %&gt</i>: <%= '<b>This is bold</b>'  %><br>
+				タグのエスケープ無し with <i>&lt%-  %&gt</i>: <%- '<b>This is bold</b>'  %><br>
+			</div>
+			<h2>マークアップ<span class="muted_font">(markdown textile)</span></h2>
+			<div class="markup_integrate">
+おまけですが、MarkUp記法に対応しています。
+対応しているのは`MarkDown`と`Textile`です。
+
+２つの記法が使えたらいいなと思って統合させたのですが、動きが良く分からない時がありますm(\_ _)m
+
+### mark down
+
+|見出し１||見出し２|
+|:--|:-:|-:|
+|表のテスト|MarkDownは|必ずヘッダーが必要|
+|それが少し面倒だけど|文字の寄せが|設定できたり|
+|する所は|便利|です。|
+
+h3. textile
+
+|こちらは|Textileの|表|
+|ヘッダー無しで作れるし|お手軽。||
+|CSSで|いい感じに|色付け|
+
+			</div>
+		</section>
+	</article><!-- /#main -->
+</div><!-- /#contents -->
+
+<!-- ag2tmp-infoに置き換わる -->
+<my-app>Loading...</my-app>

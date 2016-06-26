@@ -1,0 +1,61 @@
+        <form (submit)="form_validate()">
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>メンバーID</label>
+                    <input id="member_id" [(ng-model)]="input.member_id" type="text" (blur)="mid_search()" required/>
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label>パスワード</label>
+                    <input id="password" [(ng-model)]="input.password" type="password" (blur)="mid_search()"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>お名前</label>
+                    <input id="name" [(ng-model)]="input.name" type="text" disabled/>
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label>メールアドレス</label>
+                    <input id="email" [(ng-model)]="input.email" type="email" disabled/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-4">
+                    <label>利用開始日時 (必須)</label>
+                    <input id="from_datetime" type="text" required/>
+                    <!--<input id="from_datetime" type="text" class="form-control datetimepicker_from" required readonly/>-->
+                </div>
+                <div class="col-xs-1 col-sm-0"></div>
+                <div class="form-group col-xs-11 col-sm-5">
+                    <label>利用終了日時 (必須)</label>
+                    <input id="to_datetime" type="text" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-11">
+                    <label>車種 (必須)</label>
+                    <select id="bike_type" [(ng-model)]="input.bike_type" required>
+                        <option value="FZ-1">FZ-1</option>
+                        <option value="TW-200">TW-200</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                <div class="form-group col-xs-11 col-sm-11">
+                    <label>その他ご質問等</label>
+                    <textarea id="other" [(ng-model)]="input.other" ></textarea>
+                </div>
+            </div>
+			<!--<button type="button" class="btn btn-primary">送信</button>-->
+            <div class="row">
+                <div class="col-xs-8 col-sm-8"></div>
+    			<input id="reservation_submit" type="submit" class="btn btn-primary"></button>
+            </div>
+        </form>

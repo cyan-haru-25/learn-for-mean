@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "compass";
+@import "lib/media_queries";
+@import "bootstrap/bootstrap-variables";
+
+div#overall_contents{
+    >article#main{
+        section#insurance{
+            table{
+                width: 500px;
+                thead{
+                    th:first-child{
+                        border-right: 0px;
+                    }
+                    th:nth-child(2){
+                        border-left: 0px;
+                    }
+                    // display:none;
+                }
+            }
+        }
+        section#optional{
+            table{
+                width: 500px;
+            }
+        }
+        section#compensation{
+            table{
+                width: 300px;
+            }
+        }
+    }
+}

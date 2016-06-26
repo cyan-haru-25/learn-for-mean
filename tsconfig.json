@@ -1,0 +1,26 @@
+// パラメータ設定方法
+// http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+{
+    "compilerOptions": {
+        "target": "ES6",
+        //commonjs⇒CommonJS形式(Node.jsのrequire) ,amd⇒Require.js形式(ブラウザで使う場合)
+        "module": "commonjs",
+        // .mapファイルが出来る(jsとtsのコードの対応付けをして、ブラウザのデバッグで.tsが参照できる)
+        "sourceMap": true,
+        // 実験的な装飾？(ワーニング回避)
+        "experimentalDecorators": true
+    },
+
+    // 対象ファイルの指定    
+    // "files":[
+    //     ,"routes\\index_router.ts"
+    // ]
+    // 除外フォルダの指定
+    "exclude":[
+        "public/lib",
+        "vender",
+        "node_modules",
+        "DefinitelyTyped-master",
+        "vender/definitelyTyped"
+    ]
+}
