@@ -151,14 +151,14 @@ compass watch C:\learn-for-mean-master\public
 ```
 ※ディレクトリさえ合っていれば、プロジェクト中の`compass_watch.cmd`で実行可能。
 
-### ③'Windows-31jエラーが出る場合  
+### ③-1 Windows-31jエラーが出る場合  
 以下のサイトを参考に  
 http://sssssn.com/archives/28
 ```
 環境変数「RUBYOPT」に「-EUTF-8」を追加
 ```
 
-### ③'' "DEPRECATION WARNING on line 87 of"エラーが出る場合
+### ③-2 "DEPRECATION WARNING on line 87 of"エラーが出る場合
 エラーの原因になっている、以下のファイルの86～95行目をコメントアウト（64bitでv2.3.0のrubyの場合に出るのかも）  
 C:\Ruby23-x64\lib\ruby\gems\2.3.0\gems\compass-core-1.0.3\stylesheets\compass\css3\_deprecated-support.scss
 
@@ -171,3 +171,35 @@ C:\Ruby23-x64\lib\ruby\gems\2.3.0\gems\compass-core-1.0.3\stylesheets\compass\cs
 # その他ポイント
 * nodemonでtsファイルの変更を監視しています。  
 　⇒設定ファイルは`nodemon.json`です。
+
+<br>
+# フォルダ構成
+[ルート]  
+├─.vscode			// vsCodeの設定  
+├─bin				// アプリ起動設定ファイル  
+├─node_modules	// node installで出来る  
+├─public			// 画面側処理置き場  
+│  ├─css			// SCSS置き場  
+│  ├─fonts		// BootStrapで使うフォント  
+│  ├─html		// angular2用のテンプレート(angular2)  
+│  ├─img			// 画像  
+│  ├─js			// 画面用TSファイル置き場(angular2,typescript)  
+│  │  ├─bootstrap	// BootStrapを使うのに必要だった（はず）  
+│  │  ├─front_helper	// 画面側JSの共通処理ファイル  
+│  │  └─jquery		// Jquer系のライブラリ  
+│  ├─lib				// 一部参照しないといけないライブラリがあります  
+│  │  └─node_modules  
+│  ├─markup_integrate  
+│  └─_commons		// これは今となってはここにある必要は無い。プロジェクトごとにサブディレクトリを分けていた時の名残。public全体で共通のソース置き場。  
+│      ├─css  
+│      ├─img  
+│      └─js  
+├─server				// サーバ側ソース(express,typescript)  
+│  ├─controler		// 画面処理系クラス(mongodb)  
+│  ├─helper			// 画面に属しない共通処理用クラス  
+│  ├─model			// DBアクセス用クラス(mongodb)  
+│  ├─routes			// 処理振り分け（ルーター）クラス  
+│  ├─views			// 画面用テンプレート  
+│  └─_base			// 全体で共通の基底クラス、定義等  
+└─vender				// 多分、必要なクラスの定義が入っている。  
+    └─definitelyTyped  
