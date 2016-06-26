@@ -18,6 +18,8 @@
 動作環境は驚くほど簡単にできます。  
 さらに、開発環境の構築にもそこまで時間を要しません。
 
+また、本プロジェクトをベースにWebアプリの開発を行えば、基本設定をする手間無く素早い開発が出来るはずです。
+
 <br>
 # 対象
 本アプリはAngular2とexpressで`TypeScript`を使っています。
@@ -106,6 +108,20 @@ Ctrl+Shift+B
 * `tasks.json` -> タスクの実行設定
 * `tsconfig.json` -> コンパイル設定
 
+【ついでに】  
+本プロジェクトではexpressのテンプレートに`ect`を使っていますが、vsCodeはデフォルトでectのハイライトに対応していません。  
+そこで、ectのハイライトを有効にする為に、以下のファイルの９行目に "extensions"の定義があるので、そこに".ect"を追加する事をおススメします。  
+　`[プログラムフォルダ]Microsoft VS Code\resources\app\extensions\html\package.json  `
+
+そうする事で"ect"ファイルにhtmlと同じハイライトが適用されます。
+```
+"extensions": [ ".html", ".htm", ".shtml", ".xhtml", ".mdoc", ".jsp", ".asp", ".aspx", ".jshtm", ".vue" ],
+```
+　　↓
+```
+"extensions": [ ".html", ".htm", ".shtml", ".xhtml", ".mdoc", ".jsp", ".asp", ".aspx", ".jshtm", ".vue",".ect" ],
+```
+※vsCodeのバージョンアップの都度設定が必要なので少し面倒です。
 
 <br>
 ## 【SASSのコンパイル】

@@ -6,7 +6,6 @@
 	<link href="/_commons/css/bootstrap/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
 	<script src="/_commons/js/bootstrap/bootstrap-datetimepicker.js"></script>
 	<script src="/_commons/js/bootstrap/locales/bootstrap-datetimepicker.ja.js"></script>
-	<!--<script src="/js/reservation_model.js"></script>-->
     <script>
 		System.import('/js/reservation_front.js');  // packagesの指定により拡張子不要
     </script>
@@ -15,14 +14,15 @@
 <div id="overall_contents">
 	<article id="main">
 		<section id="reservation">
-			<h2>RESERVATION<span class="muted_font">(予約)</span></h2>
+			<h2>予約フォーム<span class="muted_font">(angular2)</span></h2>
+			<!-- ag2tmp-infoに置き換わる -->
+			<my-app>Loading...</my-app>
+
 			<div class="markup_integrate">
-以下のフォームに予約情報を入力して下さい。
-予約可否は弊社から折り返し連絡させて頂きます。
+### 概要
+メンバー登録で登録した`メンバーID`と`パスワード`を入力すると、名前とメールアドレスが読み込まれます。
+また、予約を送信すると、指定のメールアドレスにメールが送信されます。
 			</div>
-		<h2>FORM<span class="muted_font">(お申込みフォーム)</span></h2>
-		<!-- ag2tmp-infoに置き換わる -->
-		<my-app>Loading...</my-app>
 		</section>
 	</article><!-- /#main -->
 </div><!-- /#contents -->

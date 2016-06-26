@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-/// <reference path="../../../vender/definitelyTyped/jquery.d.ts" />
+/// <reference path="../../vender/definitelyTyped/jquery.d.ts" />
 const core_1 = require('angular2/core');
 const base_front = require("./_base_front");
 let ReservationFront = class ReservationFront extends base_front.BaseFront {
@@ -15,17 +15,8 @@ let ReservationFront = class ReservationFront extends base_front.BaseFront {
     constructor() {
         super();
         this.title = "Hello World!";
-        // 残念な事に、DatePickerで設定した日付はバインディング出来ていない。
-        //   private input:Object = {name:"",
-        //                         email:"",
-        //                         bike_type:"FZ-1",
-        //                         other:"",
-        //                         member_id:""
-        //                     };
         // 画面項目と対応したObject。初期値が必要な要素のみ値を設定。
-        this.input = {
-            bike_type: "FZ-1",
-        };
+        this.input = {};
         this.in_member_id = '';
         this.in_password_id = '';
         // DatePickerの設定
@@ -80,6 +71,7 @@ let ReservationFront = class ReservationFront extends base_front.BaseFront {
      * サブミット処理
      */
     form_validate() {
+        // 残念な事に、DatePickerで設定した日付はバインディング出来ていないので自分で設定。
         var data = { from_datetime: $('#from_datetime').val(),
             to_datetime: $('#to_datetime').val()
         };

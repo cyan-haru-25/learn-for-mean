@@ -1,4 +1,4 @@
-/// <reference path="../../../vender/definitelyTyped/jquery.d.ts" />
+/// <reference path="../../vender/definitelyTyped/jquery.d.ts" />
 import {bootstrap, Component,FORM_DIRECTIVES} from 'angular2/core';
 import base_front = require("./_base_front");
 

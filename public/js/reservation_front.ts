@@ -1,4 +1,4 @@
-/// <reference path="../../../vender/definitelyTyped/jquery.d.ts" />
+/// <reference path="../../vender/definitelyTyped/jquery.d.ts" />
 import {bootstrap, Component,FORM_DIRECTIVES} from 'angular2/core';
 import base_front = require("./_base_front");
 
@@ -11,16 +11,8 @@ import base_front = require("./_base_front");
 
 export class ReservationFront extends base_front.BaseFront{
       private title: string = "Hello World!";
-      // 残念な事に、DatePickerで設定した日付はバインディング出来ていない。
-    //   private input:Object = {name:"",
-    //                         email:"",
-    //                         bike_type:"FZ-1",
-    //                         other:"",
-    //                         member_id:""
-    //                     };
     // 画面項目と対応したObject。初期値が必要な要素のみ値を設定。
       private input:Object = {
-                            bike_type:"FZ-1",
                         };
 
       private in_member_id:string = '';
@@ -93,6 +85,7 @@ export class ReservationFront extends base_front.BaseFront{
        * サブミット処理
        */
         public form_validate(){
+          // 残念な事に、DatePickerで設定した日付はバインディング出来ていないので自分で設定。
             var data = {from_datetime:$('#from_datetime').val(),
                     to_datetime:$('#to_datetime').val()
                 };
