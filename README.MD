@@ -142,6 +142,10 @@ http://sssssn.com/archives/28
 環境変数「RUBYOPT」に「-EUTF-8」を追加
 ```
 
+### ③'' "DEPRECATION WARNING on line 87 of"エラーが出る場合
+エラーの原因になっている、以下のファイルの86～95行目をコメントアウト（64bitでv2.3.0のrubyの場合に出るのかも）  
+C:\Ruby23-x64\lib\ruby\gems\2.3.0\gems\compass-core-1.0.3\stylesheets\compass\css3\_deprecated-support.scss
+
 以上で、scssを修正すると、cssが出力されるはずです。
 
 【参考】  
