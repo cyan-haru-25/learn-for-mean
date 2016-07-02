@@ -63,7 +63,7 @@ npm start
 ※フォルダさえ合っていれば`start_node.cmd`で実行できるはずです。
 
 ### ④作ったサイトにアクセスします。  
-[http://localhost/](http://localhost/)
+[http://localhost:8080/](http://localhost:8080/)
 
 
 これだけで、動作確認できる状態になりました。
